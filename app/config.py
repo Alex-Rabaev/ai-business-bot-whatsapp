@@ -17,7 +17,6 @@ class Settings(BaseSettings):
 
     # Webhook
     WEBHOOK_URL: str = Field(..., description="URL вебхука")
-    VERIFY_TOKEN: str = Field(..., description="Любая фраза для верификации вебхука в Meta")
 
     # LLM
     OPENAI_API_KEY: str
