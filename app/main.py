@@ -58,7 +58,7 @@ async def health():
     return "ok\n"
 
 # --- Webhook verification (Meta -> GET) ---
-@app.get("/webhook/whatsapp/")
+@app.get("/webhook")
 async def verify_webhook(request: Request):
     """
     Meta вызовет этот GET при настройке вебхука.
@@ -79,7 +79,7 @@ async def verify_webhook(request: Request):
     raise HTTPException(status_code=403, detail="Verification failed")
 
 # --- Webhook receiver (Meta -> POST) ---
-@app.post("/webhook/whatsapp/")
+@app.post("/webhook")
 async def whatsapp_webhook(body: dict):
     """
     Тут прилетают апдейты от Meta.
